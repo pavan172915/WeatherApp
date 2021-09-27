@@ -2,8 +2,10 @@ const express = require('express');
 const chalk = require('chalk');
 const path = require('path');
 const hbs = require('hbs');
+const port = process.env.PORT || 3000
 const geocode = require('./utils/geocode.js');
 const forecast = require('./utils/forecast.js');
+const { env } = require('process');
 const app = express();
 //console.log(__dirname);
 //console.log(path.join(__dirname, '../public'));
@@ -77,6 +79,6 @@ app.get('*',(req, res) =>{
     }
     )
 })
-app.listen(5000,()=>{
+app.listen(port,()=>{
     console.log(chalk.bgGreen('Server listening on port 3000!!'));
 });
