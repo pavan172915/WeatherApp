@@ -9,7 +9,12 @@ const forecast = (latitude, longitude,callback) => {
             callback('No Such Place exit with Given Co ordinates..',undefined);
         }
         else{
+            if(response.body.current.temperature !== response.body.current.feelslike ){
             callback(undefined,'It is currently '+response.body.current.temperature+' degrees ,but it feels like '+response.body.current.feelslike+' outside');
+            }
+            else{
+                callback(undefined,'It is currently '+response.body.current.temperature+' degrees ,and it also  feels like '+response.body.current.feelslike+' outside');
+            }
         }
     })
 }
