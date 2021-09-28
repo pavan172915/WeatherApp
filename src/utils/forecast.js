@@ -13,7 +13,7 @@ const forecast = (latitude, longitude,callback) => {
             callback(undefined,'It is currently '+response.body.current.temperature+' degrees ,but it feels like '+response.body.current.feelslike+' outside');
             }
             else{
-                callback(undefined,'It is currently '+response.body.current.temperature+' outside');
+                callback(undefined,'It is currently '+response.body.current.temperature+' degrees outside');
             }
         }
     })
